@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Good thing takes time</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@1,600&display=swap');
+      * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+body{
+    height: 100vh;    
+    background: linear-gradient(rgba(6, 31, 99, 0.5), rgba(10, 41, 14, 0.5)), url("banner.jpg");
+    background-repeat: no-repeat;
+    font-family: arial;
+}
+ul{
+    background: rgb(10 8 8 / 63%);
+    /* opacity: 0.7; */
+    height: 70px;
+    width: 100%;
+    box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+li{
+
+display: inline-block;
+text-align: center;
+margin-top: 18px;
+
+}
+li a{
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 5px 20px;
+    margin: 10px;
+}
+
+li a:hover {
+    border-bottom: 1px solid #fff;
+    transition: .5s;
+}
+
+h1{
+text-align: center;
+ font-size: 60px;
+ color: white;
+ margin-top: 200px;
+ font-family: 'Reggae One', cursive;
+}
+
+.typeText::after {
+  content: "|";
+  animation:  blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0;}
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    margin-left: 40%;
+}
+button {
+    padding: 11px 40px;
+    font-size: 12px;
+    border: none;
+    text-transform: uppercase;
+    margin: 10px;
+    outline: none;
+    font-weight: bold;
+}
+
+#btn-1 {
+    border: 3px solid #f3f3f3;
+    background-color: #0012;
+    color: #fff;
+}
+#btn-1:hover {
+    background-color: #fff;
+    color: #000;
+    transition: ease-in .9s;
+}
+
+#btn-2:hover {
+    background-color: #0012;
+    color: #fff;
+    transition: ease-in .5s;
+}
+
+#btn-2 {
+    border: 3px solid #f3f3f3;
+}
+
+.social {
+    margin-top: -25px;
+    display: flex;
+    z-index: 5;
+    justify-content: flex-end;
+    margin-right: 40px;
+
+}
+
+.social .social-icons {
+    color: #fff;
+    margin: 5px 10px;
+    font-size: 20px;
+    border-bottom: 2px solid #fff;
+}
+.social .social-icons a {
+    color: #fff;
+}
+.social .social-icons:hover{
+    color: rgb(184, 182, 182);
+}
+.social .social-icons a:hover{
+    color: rgb(184, 182, 182);
+}
+    #home{
+    color: yellow;
+}
+ul img {
+    position: absolute;
+    margin-left: -500px;
+    margin-top: 12px;
+    width: 152px;
+    height: 45px;
+}
+</style>
+</head>
+<body>
+    
+<ul>
+    <img src="logo2.png" alt="">
+        <li> <a href="take%20time.html" id="home">Home</a></li>
+        <li> <a href="#">Services</a></li>
+        <li> <a href="#">About</a></li>
+        <li> <a href="#">Work</a></li>
+        <li> <a href="#">Blog</a></li>
+
+        <div class="social">
+            <div class="social-icons">
+               <a href="https://twitter.com/UmarKha22040443"><i class="fab fa-twitter o"></i></a> 
+            </div>
+            <div class="social-icons">
+               <a href="https://web.facebook.com/groups/html5css3javascripttut/" target="_blank"><i class="fab fa-facebook o"></i></a> 
+            </div>
+            <div class="social-icons">
+                <i class="fab fa-instagram o"></i>
+            </div>
+            <div class="social-icons">
+                <i class="fa fa-envelope o"></i>
+            </div>
+</ul>
+
+
+<h1 class="typeText"></h1>
+
+<p>pinnacle is a creative minimal onepage.
+    it is fully responsive and retina ready. <br> grab this template now.</p>
+
+<div class="btn">
+    <button id="btn-1" type="#">learn more</button>
+    <button id="btn-2" type="#">purchase it</button>  
+</div>
+
+<script>
+var typeText = document.querySelector(".typeText");
+var textToBeTyped = "We Design, Develop & Deploy"
+var textToBeTypedArr = ["We Design, Develop & Deploy", "Excelent Team", "Excited", "and So Committed"]
+var index = 0, isAdding = true, textToBeTypedIndex = 0
+
+function playAnim() {
+  setTimeout(function () {
+    // set the text of typeText to a substring of the text to be typed using index.
+    typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index)
+    if (isAdding) {
+      // adding text
+      if (index > textToBeTypedArr[textToBeTypedIndex].length) {
+        // no more text to add
+        isAdding = false
+        //break: wait 2s before playing again
+        setTimeout(function () {
+          playAnim()
+        }, 2000)
+        return
+      } else {
+        // increment index by 1
+        index++
+      }
+    } else {
+      // removing text
+      if (index === 0) {
+        // no more text to remove
+        isAdding = true
+        //switch to next text in text array
+        textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length
+      } else {
+        // decrement index by 1
+        index--
+      }
+    }
+    // call itself
+    playAnim()
+  }, isAdding ? 120 : 60)
+}
+// start animation
+playAnim();
+</script>
+
+</body>
+</html>
